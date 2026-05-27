@@ -216,6 +216,8 @@ function z_vec = single_shooting_x0(z_0_vec, g_i_hat, params, iter_max, tol, sho
         
             % Stop correction if no acceptable step was found
             warning('Line search failed at iteration %d.', i)
+            fprintf('Iteration %d. h = %.3e, dz = %.3e\n', ...
+            i, h, norm(Delta_z_vec))
         
             % Exit Newton loop
             break
